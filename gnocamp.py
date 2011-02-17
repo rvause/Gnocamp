@@ -94,7 +94,7 @@ class MyNotify(object):
         if gravatar_hash and SHOW_GRAVATAR:
             source = urllib.urlopen('http://www.gravatar.com/avatar/' + gravatar_hash)
             contents = source.read()
-            get_image = gtk.gdk.PixbufLoader('jpeg')
+            get_image = gtk.gdk.PixbufLoader()
             get_image.write(contents)
             get_image.close()
             n.set_icon_from_pixbuf(get_image.get_pixbuf())
